@@ -49,14 +49,14 @@ function Streams() {
         peerServiceRef.current.peer?.addTrack(track, localStream);
       }
     }
-  }, [])
+  }, [localStream])
 
   const handleCallAccepted = useCallback(({ answer }: { answer: RTCSessionDescriptionInit }) => {
     peerServiceRef.current?.setLocalDescription(answer);
     console.log('call accpeted');
 
     sendStream();
-  }, []);
+  }, [sendStream]);
 
   const handleNegotiationNedded = useCallback(async () => {
     const offer = await peerServiceRef.current?.getOffer();
