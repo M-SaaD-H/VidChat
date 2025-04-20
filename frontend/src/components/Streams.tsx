@@ -43,20 +43,20 @@ function Streams() {
     })
   }, [socket]);
 
-  const sendStream = () => {
+  const sendStream = useCallback(() => {
     if (peerServiceRef.current && localStream) {
       for (const track of localStream?.getTracks()) {
         peerServiceRef.current.peer?.addTrack(track, localStream);
       }
     }
-  }
+  }, [])
 
   const handleCallAccepted = useCallback(({ answer }: { answer: RTCSessionDescriptionInit }) => {
     peerServiceRef.current?.setLocalDescription(answer);
     console.log('call accpeted');
 
     sendStream();
-  }, [sendStream]);
+  }, []);
 
   const handleNegotiationNedded = useCallback(async () => {
     const offer = await peerServiceRef.current?.getOffer();
