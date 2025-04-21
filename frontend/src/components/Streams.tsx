@@ -152,7 +152,7 @@ function Streams() {
           localStream && (
             <div>
               <h1 className='text-2xl font-sans font-bold tracking-tight'>Local Stream</h1>
-              <ReactPlayer playing muted height={300} width={500} url={localStream} />
+              <ReactPlayer playing muted={false} height={300} width={500} url={localStream} />
             </div>
           )
         }
@@ -161,7 +161,7 @@ function Streams() {
           remoteStream && (
             <div>
               <h1 className='text-2xl font-sans font-bold tracking-tight'>Remote Stream</h1>
-              <ReactPlayer playing muted height={300} width={500} url={remoteStream} />
+              <ReactPlayer playing muted={false} height={300} width={500} url={remoteStream} />
             </div>
           )
         }
