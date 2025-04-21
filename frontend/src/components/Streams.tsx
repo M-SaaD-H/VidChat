@@ -147,7 +147,7 @@ function Streams() {
         )
       }
 
-      <div className='flex gap-24'>
+      <div className='flex flex-col md:flex-row gap-24'>
         {
           localStream && (
             <div>
