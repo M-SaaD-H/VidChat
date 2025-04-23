@@ -131,28 +131,30 @@ function Streams() {
     <div>
       <h2 className='font-lg text-lg text-center'>{remoteSocketId ? 'Someone joined the room. Click the call button to initiate the call' : 'Wait for someone to join the room'}</h2>
 
-      {
-        localStream && (
-          <button onClick={handleCallUser} className='px-2 py-1 m-4 min-w-16 rounded-lg bg-white text-black border border-white/20 cursor-pointer'>
-            Send Stream
-          </button>
-        )
-      }
+      <div className='w-full p-24 flex flex-col justify-center items-center'>
+        {
+          localStream && (
+            <button onClick={handleCallUser} className='px-2 py-1 m-4 min-w-16 rounded-lg bg-white text-black border border-white/20 cursor-pointer'>
+              Send Stream
+            </button>
+          )
+        }
 
-      {
-        remoteSocketId && (
-          <button onClick={handleCallUser} className='px-2 py-1 m-4 min-w-16 rounded-lg bg-white text-black border border-white/20 cursor-pointer'>
-            Join
-          </button>
-        )
-      }
+        {
+          remoteSocketId && (
+            <button onClick={handleCallUser} className='px-2 py-1 m-4 min-w-16 rounded-lg bg-white text-black border border-white/20 cursor-pointer'>
+              Join
+            </button>
+          )
+        }
+      </div>
 
       <div className='flex flex-col md:flex-row gap-24'>
         {
           localStream && (
             <div>
               <h1 className='text-2xl font-sans font-bold tracking-tight'>Local Stream</h1>
-              <ReactPlayer playing muted={false} height={300} width={500} url={localStream} />
+              <ReactPlayer playing muted={false} height={300} width={300} url={localStream} />
             </div>
           )
         }
@@ -161,7 +163,7 @@ function Streams() {
           remoteStream && (
             <div>
               <h1 className='text-2xl font-sans font-bold tracking-tight'>Remote Stream</h1>
-              <ReactPlayer playing muted={false} height={300} width={500} url={remoteStream} />
+              <ReactPlayer playing muted={false} height={300} width={300} url={remoteStream} />
             </div>
           )
         }
