@@ -5,7 +5,7 @@ dotenv.config({
   path: './env'
 })
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 const io = new Server(PORT , {
   cors: true
