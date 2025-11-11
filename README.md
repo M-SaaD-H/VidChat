@@ -22,19 +22,22 @@ VidChat is a **real-time video calling web app** built with **React, TypeScript,
 
 ## 📦 Contributing
 
-# Clone the repository
+#### Clone the repository
 ```bash
 git clone https://github.com/<your-username>/vidchat.git
 ```
 
-# Navigate to the project directory
+#### Navigate to the project directory
 ```bash
 cd vidchat
 ```
 
-# Install dependencies
+#### Install dependencies
 ```bash
 npm install
 ```
-# Run the development server
+
+#### Run the development server
+```bash
 npm run dev
+```
